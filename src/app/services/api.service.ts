@@ -14,4 +14,7 @@ export class ApiService {
   getProduct() {
     return this.http.get<any>('http://localhost:3000/products');
   }
+  deleteProduct(id:number) {
+    return this.http.delete<any>(`http://localhost:3000/products/${id}`);
+  } 
 }

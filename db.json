@@ -10,22 +10,31 @@
       "comment": "Best Product"
     },
     {
-      "id": "4ecf",
-      "productName": "Apple Iphone 15 Pro Max",
+      "id": "cd6f",
+      "productName": "Apple Iphone 14 Pro Max",
       "productBrand": "IPhone",
       "date": "2024-05-11T18:00:00.000Z",
-      "productFreshness": "Brand New",
-      "productPrice": 130000,
-      "comment": "Looking Good"
+      "productFreshness": "Second Hand",
+      "productPrice": 50000,
+      "comment": "Fine Condition."
     },
     {
-      "id": "8d16",
+      "id": "4790",
       "productName": "Redmi K20 Pro",
       "productBrand": "Xaiomi",
-      "date": "2024-05-10T18:00:00.000Z",
+      "date": "2024-05-03T18:00:00.000Z",
       "productFreshness": "Brand New",
       "productPrice": 35000,
-      "comment": "Beast Product"
+      "comment": "Best Condition"
+    },
+    {
+      "id": "534a",
+      "productName": "Realme 10",
+      "productBrand": "Realme",
+      "date": "2024-05-08T18:00:00.000Z",
+      "productFreshness": "Refurbished",
+      "productPrice": 20000,
+      "comment": "Fair Condition"
     }
   ]
 }

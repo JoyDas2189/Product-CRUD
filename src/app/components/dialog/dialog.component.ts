@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
@@ -26,10 +26,9 @@ export class DialogComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private api:ApiService,
-    private dialogRef: MatDialogRef<DialogComponent>,
-
-    ) {
+    private api: ApiService,
+    private dialogRef: MatDialogRef<DialogComponent>
+  ) {
     this.productForm = this.formBuilder.group({
       productName: ['', Validators.required],
       productBrand: ['', Validators.required],
@@ -40,18 +39,17 @@ export class DialogComponent {
     });
   }
   addProduct() {
-    if(this.productForm.valid){
+    if (this.productForm.valid) {
       this.api.postProduct(this.productForm.value).subscribe({
         next: (res) => {
-          alert("Product Added Successfully.");
+          alert('Product Added Successfully.');
           this.productForm.reset();
-          this.dialogRef.close();
+          this.dialogRef.close(true);
         },
-        error: (err:any) => {
-          console.log(err)
-        }
-      })
+        error: (err: any) => {
+          console.log(err);
+        },
+      });
     }
   }
-
 }

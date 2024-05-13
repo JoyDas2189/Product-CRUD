@@ -40,8 +40,13 @@ export class ProductsComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(DialogComponent, {
-      width: '30%',
+    const dialogRef = this.dialog.open(DialogComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getProducts();
+        }
+      },
     });
   }
 
@@ -51,6 +56,25 @@ export class ProductsComponent implements OnInit {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+      },
+      error: (err: any) => {
+        console.log(err);
+      },
+    });
+  }
+
+  editProduct(row: any) {
+    this.dialog.open(DialogComponent, {
+      width: '30%',
+      data: row,
+    });
+  }
+
+  deleteProduct(id: number) {
+    this.api.deleteProduct(id).subscribe({
+      next: (res) => {
+        alert('Product Deleted Successfully.');
+        this.getProducts();
       },
       error: (err: any) => {
         console.log(err);
