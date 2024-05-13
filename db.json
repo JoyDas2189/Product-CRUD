@@ -35,6 +35,24 @@
       "productFreshness": "Refurbished",
       "productPrice": 20000,
       "comment": "Fair Condition"
+    },
+    {
+      "id": "89e3",
+      "productName": "Google Pixel 7 Pro",
+      "productBrand": "Google",
+      "date": "2024-05-10T18:00:00.000Z",
+      "productFreshness": "Second Hand",
+      "productPrice": 45000,
+      "comment": "Good Condition"
+    },
+    {
+      "id": "d7d5",
+      "productName": "OPPO A1",
+      "productBrand": "OPPO",
+      "date": "2024-05-03T18:00:00.000Z",
+      "productFreshness": "Brand New",
+      "productPrice": 15000,
+      "comment": "Bad Condition"
     }
   ]
 }

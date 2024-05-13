@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CoreService } from '../../core/core.service';
 
 @Component({
   selector: 'app-dialog',
@@ -27,7 +28,8 @@ export class DialogComponent {
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
-    private dialogRef: MatDialogRef<DialogComponent>
+    private dialogRef: MatDialogRef<DialogComponent>,
+    private coreService: CoreService
   ) {
     this.productForm = this.formBuilder.group({
       productName: ['', Validators.required],
@@ -42,7 +44,7 @@ export class DialogComponent {
     if (this.productForm.valid) {
       this.api.postProduct(this.productForm.value).subscribe({
         next: (res) => {
-          alert('Product Added Successfully.');
+          this.coreService.openSnackBar('Product Added Successfully', 'Done');
           this.productForm.reset();
           this.dialogRef.close(true);
         },

@@ -7,6 +7,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { CoreService } from '../../core/core.service';
 
 @Component({
   selector: 'app-products',
@@ -28,7 +29,11 @@ export class ProductsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(private dialog: MatDialog, private api: ApiService) {}
+  constructor(
+    private dialog: MatDialog,
+    private api: ApiService,
+    private coreService: CoreService
+  ) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -40,7 +45,9 @@ export class ProductsComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent);
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '30%',
+    });
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
@@ -73,7 +80,7 @@ export class ProductsComponent implements OnInit {
   deleteProduct(id: number) {
     this.api.deleteProduct(id).subscribe({
       next: (res) => {
-        alert('Product Deleted Successfully.');
+        this.coreService.openSnackBar('Product Deleted Successfully', 'Done');
         this.getProducts();
       },
       error: (err: any) => {
