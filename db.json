@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": "9797",
+      "productName": "Samsung Galaxy S24 Ultra",
+      "productBrand": "Samsung",
+      "date": "2024-05-12T18:00:00.000Z",
+      "productFreshness": "Brand New",
+      "productPrice": 120000,
+      "comment": "Best Product"
+    },
+    {
+      "id": "4ecf",
+      "productName": "Apple Iphone 15 Pro Max",
+      "productBrand": "IPhone",
+      "date": "2024-05-11T18:00:00.000Z",
+      "productFreshness": "Brand New",
+      "productPrice": 130000,
+      "comment": "Looking Good"
+    },
+    {
+      "id": "8d16",
+      "productName": "Redmi K20 Pro",
+      "productBrand": "Xaiomi",
+      "date": "2024-05-10T18:00:00.000Z",
+      "productFreshness": "Brand New",
+      "productPrice": 35000,
+      "comment": "Beast Product"
+    }
+  ]
+}
