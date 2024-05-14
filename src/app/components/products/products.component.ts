@@ -71,10 +71,19 @@ export class ProductsComponent implements OnInit {
   }
 
   editProduct(row: any) {
-    this.dialog.open(DialogComponent, {
-      width: '30%',
-      data: row,
-    });
+    this.dialog
+      .open(DialogComponent, {
+        width: '30%',
+        data: row,
+      })
+      .afterClosed()
+      .subscribe({
+        next: (val) => {
+          if (val) {
+            this.getProducts();
+          }
+        },
+      });
   }
 
   deleteProduct(id: number) {

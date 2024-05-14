@@ -1,13 +1,13 @@
 {
   "products": [
     {
-      "id": "9797",
       "productName": "Samsung Galaxy S24 Ultra",
       "productBrand": "Samsung",
       "date": "2024-05-12T18:00:00.000Z",
-      "productFreshness": "Brand New",
-      "productPrice": 120000,
-      "comment": "Best Product"
+      "productFreshness": "Second Hand",
+      "productPrice": 60000,
+      "comment": "Good Condition",
+      "id": "9797"
     },
     {
       "id": "cd6f",
@@ -37,13 +37,13 @@
       "comment": "Fair Condition"
     },
     {
-      "id": "89e3",
       "productName": "Google Pixel 7 Pro",
       "productBrand": "Google",
       "date": "2024-05-10T18:00:00.000Z",
       "productFreshness": "Second Hand",
       "productPrice": 45000,
-      "comment": "Good Condition"
+      "comment": "Good Condition",
+      "id": "89e3"
     },
     {
       "id": "d7d5",
