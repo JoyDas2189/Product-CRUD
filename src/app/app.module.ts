@@ -13,8 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { MatFormField, MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -24,10 +23,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AddBlogsComponent } from './blogs/add-blogs/add-blogs.component';
+import { BlogsListComponent } from './blogs/blogs-list/blogs-list.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductsComponent, DialogComponent],
+  declarations: [AppComponent, ProductsComponent, DialogComponent, AddBlogsComponent, BlogsListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,9 +36,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
-    MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatFormField,
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,

@@ -81,6 +81,7 @@ export class DialogComponent implements OnInit {
       this.updateProduct();
     }
   }
+  
   updateProduct() {
     this.api.putProduct(this.productForm.value, this.editData.id).subscribe({
       next: () => {

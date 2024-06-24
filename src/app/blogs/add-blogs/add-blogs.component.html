@@ -1,0 +1,54 @@
+<div matDialogTitle>
+  <h1 class="form-heading">Add Blogs Form</h1>
+</div>
+<form [formGroup]="blogForm">
+  <div mat-dialog-content class="form">
+
+    <mat-form-field class="outline">
+      <mat-label>Blog Title</mat-label>
+      <input matInput formControlName="blogTitle">
+    </mat-form-field>
+
+    <mat-form-field class="outline">
+      <mat-label>Summary</mat-label>
+      <input matInput formControlName="summary">
+    </mat-form-field>
+
+    <mat-form-field class="outline">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field class="outline">
+      <mat-label>Author</mat-label>
+      <input matInput formControlName="author">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="date-picke">
+      <mat-label>Publishing Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="publishingDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="outline">
+      <mat-label>Image URL</mat-label>
+      <input matInput formControlName="imageUrl">
+    </mat-form-field>
+
+  </div>
+  <div matDialogActions class="dialog-button">
+    <button
+      mat-raised-button
+      color="warn"
+      type="button"
+      [mat-dialog-close]="false"
+    >
+      Cancel
+    </button>
+    <button mat-raised-button color="primary" type="submit" (click)="addBlog()">
+      {{ actionBtn }}
+    </button>
+  </div>
+</form>

@@ -19,13 +19,13 @@
       "comment": "Fine Condition."
     },
     {
-      "id": "4790",
-      "productName": "Redmi K20 Pro",
+      "productName": "Redmi K20 Pro ",
       "productBrand": "Xaiomi",
       "date": "2024-05-03T18:00:00.000Z",
       "productFreshness": "Brand New",
       "productPrice": 35000,
-      "comment": "Best Condition"
+      "comment": "Best Condition",
+      "id": "4790"
     },
     {
       "id": "534a",
@@ -46,13 +46,78 @@
       "id": "89e3"
     },
     {
-      "id": "d7d5",
       "productName": "OPPO A1",
       "productBrand": "OPPO",
       "date": "2024-05-03T18:00:00.000Z",
       "productFreshness": "Brand New",
       "productPrice": 15000,
-      "comment": "Bad Condition"
+      "comment": "Worst Condition",
+      "id": "d7d5"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "691b",
+      "blogTitle": "Cox's Bazar Heals The Soul",
+      "summary": "Visit cox's bazar to heal yourself.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "author": "Joy  Das",
+      "publishingDate": "2024-05-11T18:00:00.000Z",
+      "imageUrl": "https://cox's_bazar.jpg."
+    },
+    {
+      "id": "33b9",
+      "blogTitle": "Guliakhali Heals",
+      "summary": "Visit Guliakhali Sea Beach to heal yourself",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "author": "Joy Das",
+      "publishingDate": "2024-05-10T18:00:00.000Z",
+      "imageUrl": "https://guliakhali.jpg"
+    },
+    {
+      "id": "6e6f",
+      "blogTitle": "Panam CIty Heals",
+      "summary": "Visit Panam City to heal yourself",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "author": "Joy Das",
+      "publishingDate": "2024-05-09T18:00:00.000Z",
+      "imageUrl": "https://panam_city.jpg"
+    },
+    {
+      "id": "b04e",
+      "blogTitle": "Bandarban Heals",
+      "summary": "Visit Bandarban to heal yourself",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "author": "Joy Das",
+      "publishingDate": "2024-05-01T18:00:00.000Z",
+      "imageUrl": "https://badarban.jpg"
+    },
+    {
+      "id": "894e",
+      "blogTitle": "Shitakunda",
+      "summary": "Visit Shitakunda to heal yourself",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "author": "Joy Das",
+      "publishingDate": "2024-05-06T18:00:00.000Z",
+      "imageUrl": "https://shitakunda.jpg"
+    },
+    {
+      "id": "61b4",
+      "blogTitle": "Koiyachora Waterfall heals the soul",
+      "summary": "Visit Khoiyachora Waterfall to heal yourself",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "author": "Joy Das",
+      "publishingDate": "2024-05-07T18:00:00.000Z",
+      "imageUrl": "https://khoiyachora.jpg"
+    },
+    {
+      "blogTitle": "Mohamaya Lake Heals The Soul",
+      "summary": "Visit Moahamaya Lake to Heal Yourself",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "author": "Joy Das",
+      "publishingDate": "2024-04-16T18:00:00.000Z",
+      "imageUrl": "https://mohamaya.jpg",
+      "id": "6172"
     }
   ]
 }
