@@ -1,0 +1,38 @@
+
+<div mat-dialog-title>
+    <h1 class="form-heading">Add Destination</h1>
+  </div>
+  <form [formGroup]="destinationTypeFrom">
+    <div matDialogContent class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Destination Type</mat-label>
+        <input matInput type="text" formControlName="destinationType" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" formControlName="description" />
+      </mat-form-field>
+
+    </div>
+  
+    <div matDialogActions class="dialog-button">
+      <button
+        mat-raised-button
+        type="button"
+        color="warn"
+        [mat-dialog-close]="false"
+      >
+        Cancel
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="addDestinationType()"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+  

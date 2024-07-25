@@ -1,0 +1,57 @@
+<div mat-dialog-title>
+  <h1 class="form-heading">Add Destination</h1>
+</div>
+<form [formGroup]="destinationForm">
+  <div matDialogContent class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Destination Name</mat-label>
+      <input matInput type="text" formControlName="destinationName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput type="text" formControlName="description" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Destination Type ID</mat-label>
+      <input matInput type="number" formControlName="destinationTypeId" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>isPopular?</mat-label>
+      <mat-select formControlName="isPopular">
+        <mat-option *ngFor="let val of popular" [value]="val">{{
+          val
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>isSuggested?</mat-label>
+      <mat-select formControlName="isSuggested">
+        <mat-option *ngFor="let val of suggested" [value]="val">{{
+          val
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div matDialogActions class="dialog-button">
+    <button
+      mat-raised-button
+      type="button"
+      color="warn"
+      [mat-dialog-close]="false"
+    >
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="addDestination()"
+    >
+      Save
+    </button>
+  </div>
+</form>

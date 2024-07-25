@@ -2,14 +2,14 @@
     flex: 1 1 auto;
 }
 .container {
-    max-width: 80%;
+    max-width: 60%;
     margin: 0 auto;
 }
 .container-filter {
     width: 100%;
     margin-top: 20px;
 }
-.mat-sort-header {
-    font-size: medium;
+.mat-sort-header{
     font-weight: 600;
+    font-size: medium;
 }

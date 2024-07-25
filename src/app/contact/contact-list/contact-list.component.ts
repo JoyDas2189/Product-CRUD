@@ -1,27 +1,26 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddBlogsComponent } from '../add-blogs/add-blogs.component';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { BlogsService } from '../../services/blogs.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { ContactService } from '../../services/contact.service';
 import { CoreService } from '../../core/core.service';
+import { AddContactComponent } from '../add-contact/add-contact.component';
 
 @Component({
-  selector: 'app-blogs-list',
-  templateUrl: './blogs-list.component.html',
-  styleUrl: './blogs-list.component.css'
+  selector: 'app-contact-list',
+  templateUrl: './contact-list.component.html',
+  styleUrl: './contact-list.component.css',
 })
-export class BlogsListComponent implements OnInit{
+export class ContactListComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
-    'blogTitle',
-    'summary',
-    'description',
-    'author',
-    'publishingDate',
-    'imageUrl',
-    'action'
+    'type',
+    'info',
+    'icon',
+    'Phone',
+    'email',
+    'action',
   ];
   dataSource!: MatTableDataSource<any>;
 
@@ -29,13 +28,13 @@ export class BlogsListComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private dialog:MatDialog,
-    private blogService:BlogsService,
-    private coreService:CoreService
+    private dialog: MatDialog,
+    private contactService: ContactService,
+    private coreService: CoreService
   ) {}
 
   ngOnInit(): void {
-    this.getBlogs();
+    this.getContact();
   }
 
   ngAfterViewInit() {
@@ -44,35 +43,34 @@ export class BlogsListComponent implements OnInit{
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(AddBlogsComponent, {
+    const dialogRef = this.dialog.open(AddContactComponent, {
       width: '30%',
     });
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-          this.getBlogs();
+          this.getContact();
         }
       },
     });
-    
   }
 
-  getBlogs() {
-    this.blogService.getBlogs().subscribe({
+  getContact() {
+    this.contactService.getContact().subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },
-      error: (err:any) => {
+      error: (err: any) => {
         alert(err);
-      }
-    })
+      },
+    });
   }
 
-  editBlogs(row: any) {
+  editContact(row: any) {
     this.dialog
-      .open(AddBlogsComponent, {
+      .open(AddContactComponent, {
         width: '30%',
         data: row,
       })
@@ -80,18 +78,16 @@ export class BlogsListComponent implements OnInit{
       .subscribe({
         next: (val) => {
           if (val) {
-            this.getBlogs();
+            this.getContact();
           }
         },
       });
   }
-
-
-  deleteBlogs(id: number) {
-    this.blogService.deleteBlogs(id).subscribe({
+  deleteContact(id: number) {
+    this.contactService.deleteContact(id).subscribe({
       next: (res) => {
-        this.coreService.openSnackBar('Product Deleted Successfully', 'Done');
-        this.getBlogs();
+        this.coreService.openSnackBar('Contact Deleted Successfully', 'Done');
+        this.getContact();
       },
       error: (err: any) => {
         console.log(err);

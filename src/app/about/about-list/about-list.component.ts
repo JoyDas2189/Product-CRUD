@@ -1,78 +1,75 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
-import { ApiService } from '../../services/api.service';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { MatSort, MatSortModule } from '@angular/material/sort';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from '../../core/core.service';
+import { BlogsService } from '../../services/blogs.service';
+import { AboutService } from '../../services/about.service';
+import { AddAboutComponent } from '../add-about/add-about.component';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.css',
+  selector: 'app-about-list',
+  templateUrl: './about-list.component.html',
+  styleUrl: './about-list.component.css',
 })
-export class ProductsComponent implements OnInit {
+export class AboutListComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
-    'productName',
-    'productBrand',
-    'date',
-    'productFreshness',
-    'productPrice',
-    'comment',
+    'topic',
+    'description',
+    'imageUrl',
     'action',
   ];
+
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
   constructor(
     private dialog: MatDialog,
-    private api: ApiService,
+    private aboutService: AboutService,
     private coreService: CoreService
   ) {}
 
   ngOnInit(): void {
-    this.getProducts();
+    this.getAbout();
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
   openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent, {
+    const dialogRef = this.dialog.open(AddAboutComponent, {
       width: '30%',
     });
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-          this.getProducts();
+          this.getAbout();
         }
       },
     });
   }
 
-  getProducts() {
-    this.api.getProduct().subscribe({
+  getAbout() {
+    this.aboutService.getAbout().subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },
       error: (err: any) => {
-        console.log(err);
+        alert(err);
       },
     });
   }
 
-  editProduct(row: any) {
+  editAbout(row: any) {
     this.dialog
-      .open(DialogComponent, {
+      .open(AddAboutComponent, {
         width: '30%',
         data: row,
       })
@@ -80,24 +77,22 @@ export class ProductsComponent implements OnInit {
       .subscribe({
         next: (val) => {
           if (val) {
-            this.getProducts();
+            this.getAbout();
           }
         },
       });
   }
-
-  deleteProduct(id: number) {
-    this.api.deleteProduct(id).subscribe({
+  deleteAbout(id: number) {
+    this.aboutService.deleteAbout(id).subscribe({
       next: (res) => {
-        this.coreService.openSnackBar('Product Deleted Successfully', 'Done');
-        this.getProducts();
+        this.coreService.openSnackBar('About Deleted Successfully', 'Done');
+        this.getAbout();
       },
       error: (err: any) => {
         console.log(err);
       },
     });
   }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

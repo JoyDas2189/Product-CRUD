@@ -1,41 +1,38 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddBlogsComponent } from '../add-blogs/add-blogs.component';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { BlogsService } from '../../services/blogs.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { DestinationTypeService } from '../../services/destination-type.service';
 import { CoreService } from '../../core/core.service';
+import { AddDestinationTypeComponent } from '../add-destination-type/add-destination-type.component';
 
 @Component({
-  selector: 'app-blogs-list',
-  templateUrl: './blogs-list.component.html',
-  styleUrl: './blogs-list.component.css'
+  selector: 'app-destination-type-list',
+  templateUrl: './destination-type-list.component.html',
+  styleUrl: './destination-type-list.component.css',
 })
-export class BlogsListComponent implements OnInit{
+export class DestinationTypeListComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
-    'blogTitle',
-    'summary',
+    'destinationType',
     'description',
-    'author',
-    'publishingDate',
-    'imageUrl',
-    'action'
+    'action',
   ];
+
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private dialog:MatDialog,
-    private blogService:BlogsService,
-    private coreService:CoreService
+    private dialog: MatDialog,
+    private destinationTypeService: DestinationTypeService,
+    private coreService: CoreService
   ) {}
 
   ngOnInit(): void {
-    this.getBlogs();
+    this.getDestinationType();
   }
 
   ngAfterViewInit() {
@@ -44,35 +41,33 @@ export class BlogsListComponent implements OnInit{
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(AddBlogsComponent, {
+    const dialogRef = this.dialog.open(AddDestinationTypeComponent, {
       width: '30%',
     });
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-          this.getBlogs();
+          this.getDestinationType();
         }
       },
     });
-    
   }
 
-  getBlogs() {
-    this.blogService.getBlogs().subscribe({
+  getDestinationType() {
+    this.destinationTypeService.getDestinationType().subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },
-      error: (err:any) => {
+      error: (err: any) => {
         alert(err);
-      }
-    })
+      },
+    });
   }
-
-  editBlogs(row: any) {
+  editDestinationType(row: any) {
     this.dialog
-      .open(AddBlogsComponent, {
+      .open(AddDestinationTypeComponent, {
         width: '30%',
         data: row,
       })
@@ -80,25 +75,23 @@ export class BlogsListComponent implements OnInit{
       .subscribe({
         next: (val) => {
           if (val) {
-            this.getBlogs();
+            this.getDestinationType();
           }
         },
       });
   }
 
-
-  deleteBlogs(id: number) {
-    this.blogService.deleteBlogs(id).subscribe({
+  deleteDestinationType(id: number) {
+    this.destinationTypeService.deleteDestinationType(id).subscribe({
       next: (res) => {
         this.coreService.openSnackBar('Product Deleted Successfully', 'Done');
-        this.getBlogs();
+        this.getDestinationType();
       },
       error: (err: any) => {
         console.log(err);
       },
     });
   }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

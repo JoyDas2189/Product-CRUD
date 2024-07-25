@@ -1,0 +1,49 @@
+<div matDialogTitle>
+  <h1 class="form-heading">Add Contact Form</h1>
+</div>
+<form [formGroup]="contactForm">
+  <div mat-dialog-content class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Contact Type</mat-label>
+      <input matInput formControlName="type" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Information</mat-label>
+      <input matInput formControlName="info" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Icon</mat-label>
+      <input matInput formControlName="icon" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="Phone" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+  </div>
+  <div matDialogActions class="dialog-button">
+    <button
+      mat-raised-button
+      color="warn"
+      type="button"
+      [mat-dialog-close]="false"
+    >
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="addContact()"
+    >
+      {{ actionBtn }}
+    </button>
+  </div>
+</form>

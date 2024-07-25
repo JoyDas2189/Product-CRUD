@@ -3,40 +3,45 @@
 </div>
 <form [formGroup]="blogForm">
   <div mat-dialog-content class="form">
-
-    <mat-form-field class="outline">
+    <mat-form-field appearance="outline">
       <mat-label>Blog Title</mat-label>
-      <input matInput formControlName="blogTitle">
+      <input matInput formControlName="blogTitle" />
     </mat-form-field>
 
-    <mat-form-field class="outline">
+    <mat-form-field appearance="outline">
       <mat-label>Summary</mat-label>
-      <input matInput formControlName="summary">
+      <input matInput formControlName="summary" />
     </mat-form-field>
 
-    <mat-form-field class="outline">
+    <mat-form-field appearance="outline">
       <mat-label>Description</mat-label>
-      <input matInput formControlName="description">
+      <input matInput formControlName="description" />
     </mat-form-field>
 
-    <mat-form-field class="outline">
+    <mat-form-field appearance="outline">
       <mat-label>Author</mat-label>
-      <input matInput formControlName="author">
+      <input matInput formControlName="author" />
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="date-picke">
       <mat-label>Publishing Date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="publishingDate">
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="publishingDate"
+      />
       <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
-    <mat-form-field class="outline">
+    <mat-form-field appearance="outline">
       <mat-label>Image URL</mat-label>
-      <input matInput formControlName="imageUrl">
+      <input matInput formControlName="imageUrl" />
     </mat-form-field>
-
   </div>
   <div matDialogActions class="dialog-button">
     <button

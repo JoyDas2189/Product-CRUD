@@ -1,69 +1,13 @@
 {
-  "products": [
-    {
-      "productName": "Samsung Galaxy S24 Ultra",
-      "productBrand": "Samsung",
-      "date": "2024-05-12T18:00:00.000Z",
-      "productFreshness": "Second Hand",
-      "productPrice": 60000,
-      "comment": "Good Condition",
-      "id": "9797"
-    },
-    {
-      "id": "cd6f",
-      "productName": "Apple Iphone 14 Pro Max",
-      "productBrand": "IPhone",
-      "date": "2024-05-11T18:00:00.000Z",
-      "productFreshness": "Second Hand",
-      "productPrice": 50000,
-      "comment": "Fine Condition."
-    },
-    {
-      "productName": "Redmi K20 Pro ",
-      "productBrand": "Xaiomi",
-      "date": "2024-05-03T18:00:00.000Z",
-      "productFreshness": "Brand New",
-      "productPrice": 35000,
-      "comment": "Best Condition",
-      "id": "4790"
-    },
-    {
-      "id": "534a",
-      "productName": "Realme 10",
-      "productBrand": "Realme",
-      "date": "2024-05-08T18:00:00.000Z",
-      "productFreshness": "Refurbished",
-      "productPrice": 20000,
-      "comment": "Fair Condition"
-    },
-    {
-      "productName": "Google Pixel 7 Pro",
-      "productBrand": "Google",
-      "date": "2024-05-10T18:00:00.000Z",
-      "productFreshness": "Second Hand",
-      "productPrice": 45000,
-      "comment": "Good Condition",
-      "id": "89e3"
-    },
-    {
-      "productName": "OPPO A1",
-      "productBrand": "OPPO",
-      "date": "2024-05-03T18:00:00.000Z",
-      "productFreshness": "Brand New",
-      "productPrice": 15000,
-      "comment": "Worst Condition",
-      "id": "d7d5"
-    }
-  ],
   "blogs": [
     {
-      "id": "691b",
       "blogTitle": "Cox's Bazar Heals The Soul",
       "summary": "Visit cox's bazar to heal yourself.",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       "author": "Joy  Das",
       "publishingDate": "2024-05-11T18:00:00.000Z",
-      "imageUrl": "https://cox's_bazar.jpg."
+      "imageUrl": "https://cox's_bazar.jpg.",
+      "id": "691b"
     },
     {
       "id": "33b9",
@@ -118,6 +62,113 @@
       "publishingDate": "2024-04-16T18:00:00.000Z",
       "imageUrl": "https://mohamaya.jpg",
       "id": "6172"
+    },
+    {
+      "blogTitle": "Moheshkhali Heals",
+      "summary": "Visit Moheshkhali to heal yourself",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "author": "Joy Das",
+      "publishingDate": "2024-07-07T18:00:00.000Z",
+      "imageUrl": "https://moheshkhali.jpg",
+      "id": "be2e"
+    }
+  ],
+  "destinations": [
+    {
+      "destinationName": "Cox's Bazar",
+      "description": "Place with  Sea Beach",
+      "destinationTypeId": 34,
+      "isPopular": "Popular",
+      "isSuggested": "Recommended",
+      "id": "3b9c"
+    },
+    {
+      "destinationName": "Mohamaya Lake",
+      "description": "Place with Beautiful Lake",
+      "destinationTypeId": 12,
+      "isPopular": "Popular",
+      "isSuggested": "Recommended",
+      "id": "c82f"
+    },
+    {
+      "id": "3c13",
+      "destinationName": "Moheshkhali ",
+      "description": "Visit Moheshkhali",
+      "destinationTypeId": 123,
+      "isPopular": "Popular",
+      "isSuggested": "Recommended"
+    },
+    {
+      "destinationName": "Sundarban ",
+      "description": "Place with Forest",
+      "destinationTypeId": 13,
+      "isPopular": "Popular",
+      "isSuggested": "Recommended",
+      "id": "0925"
+    }
+  ],
+  "destinationType": [
+    {
+      "destinationType": "Forest",
+      "description": "\tLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "id": "1"
+    },
+    {
+      "destinationType": "Sea Beach",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "id": "d7b6"
+    },
+    {
+      "id": "bf0e",
+      "destinationType": "Lake",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "id": "231e",
+      "destinationType": "Haritages",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "id": "f2d7",
+      "destinationType": "Mountain",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "id": "d67f",
+      "destinationType": "Biya Bari",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    }
+  ],
+  "contact": [
+    {
+      "type": "Tour Package",
+      "info": "Explore the beauty of Bangladesh with our guided tours",
+      "icon": "tour_package.jpg",
+      "Phone": "01715008355",
+      "email": "dayjoy365d@gmail.com",
+      "id": "1"
+    },
+    {
+      "type": "Transportation",
+      "info": "Reliable Transportation Service",
+      "icon": "transportation.png",
+      "Phone": "01970083554",
+      "email": "joydas2189@gmail.com",
+      "id": "3a94"
+    }
+  ],
+  "about": [
+    {
+      "topic": "Why Choose Us?",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "imageUrl": "https://uss.png",
+      "id": "1"
+    },
+    {
+      "id": "d241",
+      "topic": "Our Policy",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "imageUrl": "our_policy.jpg"
     }
   ]
 }
